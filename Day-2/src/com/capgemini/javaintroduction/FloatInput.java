@@ -2,13 +2,13 @@ package com.capgemini.javaintroduction;
 
 import java.util.Scanner;
 
-public class StringProgram {
+public class FloatInput {
 
 	public static void main(String[] args) {
-		Scanner sc=new Scanner(System.in);
-		String gau=sc.nextLine();
-		System.out.println(gau);
 		
+		Scanner in=new Scanner(System.in);
+		float gau = in.nextFloat();
+		System.out.println(gau);
 	}
 
 }
