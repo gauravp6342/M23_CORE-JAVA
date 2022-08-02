@@ -5,8 +5,8 @@ import java.util.Scanner;
 public class FloatInput {
 
 	public static void main(String[] args) {
-		Scanner in=new Scanner(System.in);
-		float flt=in.nextFloat();
+		Scanner sc=new Scanner(System.in);
+		float flt=sc.nextFloat();
 		System.out.println(flt);
 
 	}
