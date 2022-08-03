@@ -8,8 +8,8 @@ class Hector
 	//parameterized constructor
 	Hector(int speed,String color)
 	{
-		this.speed=155;
-	    this.color="Blue";	
+		this.speed=160;
+	    this.color="Silver";	
 	}
 	void accept()
 	{
@@ -19,7 +19,7 @@ class Hector
 public class ParameterizedConstructor {
 
 	public static void main(String[] args) {
-		Hector h=new Hector(0, null);
+		Hector h=new Hector(160,"Silver");
 		h.accept();
 		
 
