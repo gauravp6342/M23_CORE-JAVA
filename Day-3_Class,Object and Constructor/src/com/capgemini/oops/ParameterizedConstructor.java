@@ -2,7 +2,7 @@ package com.capgemini.oops;
 
 class Hector
 { 
-	//class vAR
+	//class var
 	int speed;
 	String color;
 	//parameterized constructor
