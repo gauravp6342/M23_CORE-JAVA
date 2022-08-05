@@ -6,8 +6,8 @@ public class StringProgram {
 
 	public static void main(String[] args) {
 		Scanner sc=new Scanner(System.in);
-		String gau=sc.nextLine();
-		System.out.println(gau);
+		String gaurav=sc.nextLine();
+		System.out.println(gaurav);
 		
 	}
 
