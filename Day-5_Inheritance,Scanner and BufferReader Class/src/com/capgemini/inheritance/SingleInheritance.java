@@ -5,8 +5,7 @@ class Parent
 	protected int roll_no;
 	void print()
 	{
-		System.out.println("Hey Guys! What's going on?");
-		
+		System.out.println("Hey Guys! What's up");	
 	}
 	
 }
@@ -26,7 +25,6 @@ public class SingleInheritance {
 		c.accept();
 		c.print();
 		
-
 	}
 
 }
