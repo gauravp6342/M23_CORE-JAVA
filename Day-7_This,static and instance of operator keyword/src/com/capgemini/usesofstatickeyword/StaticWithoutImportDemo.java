@@ -1,5 +1,5 @@
 package com.capgemini.usesofstatickeyword;
-//non static import
+//without static import
 public class StaticWithoutImportDemo {
 
 	public static void main(String[] args) {
