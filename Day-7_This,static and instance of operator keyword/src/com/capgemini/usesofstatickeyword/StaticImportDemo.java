@@ -1,4 +1,5 @@
 package com.capgemini.usesofstatickeyword;
+//Math package imported using static
 import static java.lang.Math.*;
 public class StaticImportDemo {
 
