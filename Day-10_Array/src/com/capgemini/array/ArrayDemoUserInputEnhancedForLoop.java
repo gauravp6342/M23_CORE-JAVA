@@ -21,7 +21,6 @@ public class ArrayDemoUserInputEnhancedForLoop {
 			for(int j:arr)
 			{
 				System.out.println(j);
-			}
-			
+			}	
 		}
 	}
