@@ -4,7 +4,7 @@ public class ArrayDemo {
 
 	public static void main(String[] args) {
 		/*int arr[]=new int[]{25,34,11,18};
-		 * do not declare the size at the ned if you are initializing the array
+		 * do not declare the size at the end if you are initializing the array
 		 */
 		int arr[]=new int[]{25,34,11,18};
 		System.out.println("The array index value is: "+arr[1]);
