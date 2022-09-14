@@ -7,7 +7,7 @@ import java.sql.SQLException;
 //data access object
 public class EmployeeDao 
 {
-	//making a connection between java & mysql
+	//making a connection between java & MySQL
 	public Connection createConnection()
 	{
 		String URL="jdbc:mysql://localhost:3306/TNS";

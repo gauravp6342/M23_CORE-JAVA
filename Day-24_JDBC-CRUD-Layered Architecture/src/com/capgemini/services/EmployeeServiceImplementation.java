@@ -9,10 +9,10 @@ import com.capgemini.entities.Employee;
 import com.capgemini.repository.EmployeeRepository;
 import com.capgemini.repository.EmployeeRepositoryImplementation;
 
-public class EmployeeServiceImplementation implements EmployeeService 
+public class EmployeeServiceImplementation implements EmployeeService
 {
 	@Override
-	public boolean AddEmployee(Employee e) 
+	public boolean AddEmployee(Employee e)
 	{
 		String query="INSERT INTO EMPLOYEE VALUES(?,?)";
 		EmployeeRepository repo=new EmployeeRepositoryImplementation();
@@ -27,7 +27,7 @@ public class EmployeeServiceImplementation implements EmployeeService
 		}
 	}
 	@Override
-	public Employee updateEmployee(Employee e) 
+	public Employee updateEmployee(Employee e)
 	{
 		String query="UPDATE EMPLOYEE SET Ename=? WHERE (ID=?)";
 		EmployeeRepository repo=new EmployeeRepositoryImplementation();
@@ -49,13 +49,13 @@ public class EmployeeServiceImplementation implements EmployeeService
 		EmployeeRepository repo=new EmployeeRepositoryImplementation();
 		String query="SELECT * FROM EMPLOYEE WHERE ID=" +ID;
 		ResultSet r=repo.RetrieveQuery(query);
-		try 
+		try
 		{
 			r.next();
 			e.setID(r.getInt(1));
 			e.setEname(r.getString(2));
 		}
-		catch (SQLException e1) 
+		catch(SQLException e1)
 		{
 			e1.printStackTrace();
 		}
@@ -68,17 +68,17 @@ public class EmployeeServiceImplementation implements EmployeeService
 		EmployeeRepository repo=new EmployeeRepositoryImplementation();
 		String query="SELECT * FROM EMPLOYEE";
 		ResultSet r=repo.RetrieveQuery(query);
-		try 
+		try
 		{
 			while(r.next())
 			{
 				Employee e=new Employee();
 				e.setID(r.getInt(1));
 				e.setEname(r.getString(2));
-				emp.add(e);	
+				emp.add(e);
 			}
-		} 
-		catch (SQLException e1) 
+		}
+		catch(SQLException e1)
 		{
 			e1.printStackTrace();
 		}
@@ -88,7 +88,7 @@ public class EmployeeServiceImplementation implements EmployeeService
 	public boolean deleteEmployee(int ID) 
 	{
 		EmployeeRepository repo=new EmployeeRepositoryImplementation();
-		String query="DELETE FROM EMPLOYEE WHERE ID=" +ID;
+		String query="SELECT * FROM EMPLOYEE WHERE ID=" +ID;
 		int count=repo.deleteQuery(query);
 		if(count==1)
 		{

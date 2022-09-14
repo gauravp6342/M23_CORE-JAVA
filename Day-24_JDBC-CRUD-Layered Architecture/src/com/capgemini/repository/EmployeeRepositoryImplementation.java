@@ -21,13 +21,13 @@ public class EmployeeRepositoryImplementation implements EmployeeRepository
 	{
 		Connection c=dao.createConnection();
 		Statement s;
-		try 
+		try
 		{
 			s=c.createStatement();
-		} 
-		catch (SQLException e) 
+		}
+		catch(SQLException e)
 		{
-			s=null;	
+			s=null;
 		}
 		return s;
 	}
@@ -35,15 +35,14 @@ public class EmployeeRepositoryImplementation implements EmployeeRepository
 	public PreparedStatement createPrepareStatement(String query) 
 	{
 		Connection c=dao.createConnection();
-		
 		PreparedStatement s;
-		try 
+		try
 		{
 			s=c.prepareStatement(query);
-		} 
-		catch (SQLException e) 
+		}
+		catch(SQLException e)
 		{
-			s=null;	
+			s=null;
 		}
 		return s;
 	}
@@ -52,13 +51,13 @@ public class EmployeeRepositoryImplementation implements EmployeeRepository
 	{
 		Statement s=createStatement();
 		ResultSet r;
-		try 
+		try
 		{
 			r=s.executeQuery(query);
 		}
-		catch (SQLException e) 
+		catch(SQLException e)
 		{
-			r=null;	
+			r=null;
 		}
 		return r;
 	}
@@ -67,13 +66,13 @@ public class EmployeeRepositoryImplementation implements EmployeeRepository
 	{
 		PreparedStatement s=createPrepareStatement(query);
 		int count=0;
-		try 
+		try
 		{
-			s.setInt(1, e.getID());
-			s.setString(2, e.getEname());
+			s.setInt(1,e.getID());
+			s.setString(2,e.getEname());
 			count=s.executeUpdate();
-		} 
-		catch (SQLException e1) 
+		}
+		catch (SQLException e1)
 		{
 			e1.printStackTrace();
 		}
@@ -84,31 +83,31 @@ public class EmployeeRepositoryImplementation implements EmployeeRepository
 	{
 		PreparedStatement s=createPrepareStatement(query);
 		int count=0;
-		try 
+		try
 		{
-			s.setInt(2, e.getID());
-			s.setString(1, e.getEname());
+			s.setInt(2,e.getID());
+			s.setString(1,e.getEname());
 			count=s.executeUpdate();
-		} 
-		catch (SQLException e1) 
-		{	
+		}
+		catch (SQLException e1)
+		{
 			e1.printStackTrace();
 		}
 		return count;
 	}
 	@Override
-	public int deleteQuery(String query) 
+	public int deleteQuery(String query)
 	{
 		Statement s=createStatement();
 		int count;
 		try
 		{
 			count=s.executeUpdate(query);
-		} 
-		catch (SQLException e) 
+		}
+		catch(SQLException e)
 		{
 			count=0;
-			//e.printStackTrace();
+			//printStacktrace();
 		}
 		return count;
 	}
