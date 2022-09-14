@@ -9,7 +9,7 @@ import com.capgemini.entities.Employee;
 import com.capgemini.repository.EmployeeRepository;
 import com.capgemini.repository.EmployeeRepositoryImplementation;
 
-public class EmployeeServiceImplementation implements EmployeeService
+public class EmployeeServiceImplementation implements EmployeeService 
 {
 	@Override
 	public boolean AddEmployee(Employee e) 
@@ -24,14 +24,14 @@ public class EmployeeServiceImplementation implements EmployeeService
 		else
 		{
 			return false;
-		}	
+		}
 	}
 	@Override
 	public Employee updateEmployee(Employee e) 
 	{
 		String query="UPDATE EMPLOYEE SET Ename=? WHERE (ID=?)";
 		EmployeeRepository repo=new EmployeeRepositoryImplementation();
-		int count=repo.updateQuery(query,e);
+		int count=repo.updateQuery(query, e);
 		if(count==1)
 		{
 			Employee e2=GetEmployee(e.getID());
@@ -59,7 +59,7 @@ public class EmployeeServiceImplementation implements EmployeeService
 		{
 			e1.printStackTrace();
 		}
-		return e;	
+		return e;
 	}
 	@Override
 	public List<Employee> GetEmployees() 

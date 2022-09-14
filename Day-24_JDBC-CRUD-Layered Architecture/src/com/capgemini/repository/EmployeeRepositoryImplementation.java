@@ -12,7 +12,7 @@ import com.capgemini.entities.Employee;
 public class EmployeeRepositoryImplementation implements EmployeeRepository
 {
 	EmployeeDao dao;
-	public EmployeeRepositoryImplementation() 
+	public EmployeeRepositoryImplementation()
 	{
 		dao=new EmployeeDao();
 	}
@@ -32,15 +32,15 @@ public class EmployeeRepositoryImplementation implements EmployeeRepository
 		return s;
 	}
 	@Override
-	public PreparedStatement createPrepareStatement(String query)
+	public PreparedStatement createPrepareStatement(String query) 
 	{
-		Connection c=dao.createConnection()
-				;
+		Connection c=dao.createConnection();
+		
 		PreparedStatement s;
 		try 
 		{
 			s=c.prepareStatement(query);
-		}
+		} 
 		catch (SQLException e) 
 		{
 			s=null;	
@@ -55,7 +55,7 @@ public class EmployeeRepositoryImplementation implements EmployeeRepository
 		try 
 		{
 			r=s.executeQuery(query);
-		} 
+		}
 		catch (SQLException e) 
 		{
 			r=null;	
@@ -72,7 +72,7 @@ public class EmployeeRepositoryImplementation implements EmployeeRepository
 			s.setInt(1, e.getID());
 			s.setString(2, e.getEname());
 			count=s.executeUpdate();
-		}
+		} 
 		catch (SQLException e1) 
 		{
 			e1.printStackTrace();
@@ -80,7 +80,7 @@ public class EmployeeRepositoryImplementation implements EmployeeRepository
 		return count;
 	}
 	@Override
-	public int updateQuery(String query, Employee e)
+	public int updateQuery(String query, Employee e) 
 	{
 		PreparedStatement s=createPrepareStatement(query);
 		int count=0;
@@ -91,7 +91,7 @@ public class EmployeeRepositoryImplementation implements EmployeeRepository
 			count=s.executeUpdate();
 		} 
 		catch (SQLException e1) 
-		{
+		{	
 			e1.printStackTrace();
 		}
 		return count;
@@ -101,7 +101,7 @@ public class EmployeeRepositoryImplementation implements EmployeeRepository
 	{
 		Statement s=createStatement();
 		int count;
-		try 
+		try
 		{
 			count=s.executeUpdate(query);
 		} 
