@@ -12,6 +12,7 @@ public class Client
 	public static void main(String[] args) 
 	{
 		EmployeeService service=new EmployeeServiceImplementation();
+		@SuppressWarnings("resource")
 		Scanner s=new Scanner(System.in);
 		int choice;
 		do

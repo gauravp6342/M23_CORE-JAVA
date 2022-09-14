@@ -34,7 +34,8 @@ public class EmployeeRepositoryImplementation implements EmployeeRepository
 	@Override
 	public PreparedStatement createPrepareStatement(String query)
 	{
-		Connection c=dao.createConnection();
+		Connection c=dao.createConnection()
+				;
 		PreparedStatement s;
 		try 
 		{
